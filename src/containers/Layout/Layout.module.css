@@ -1,0 +1,12 @@
+.Posts {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: space-between;
+  margin: auto;
+  overflow: auto;
+  height: 500px;
+  background-color: lightblue;
+  border-style: solid;
+}

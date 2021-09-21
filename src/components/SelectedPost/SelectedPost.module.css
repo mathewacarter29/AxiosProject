@@ -1,0 +1,7 @@
+.SelectedPost {
+  width: 50%;
+  height: 30%;
+  margin: 5px auto;
+  border: solid;
+  background-color: lightblue;
+}
