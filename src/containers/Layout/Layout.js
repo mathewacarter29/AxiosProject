@@ -8,14 +8,12 @@ import NewPost from "../../components/NewPost/NewPost";
 class Layout extends Component {
   state = {
     selectedId: 0,
-    posts: [],
-    selectedPostTitle: "No post selected yet",
-    selectedPostBody: "No post selected yet"
+    posts: []
   };
 
   //Get posts from "https://jsonplaceholder.typicode.com/posts"
   componentDidMount() {
-    axios.get("https://jsonplaceholder.typicode.com/posts").then(response => {
+    axios.get("/posts").then(response => {
       const data = response.data;
       this.setState({ posts: data });
     });
@@ -27,21 +25,9 @@ class Layout extends Component {
     }
   };
 
-  componentDidUpdate(prevProps, prevState, snapshot) {
-    if (this.state.selectedId !== prevState.selectedId) {
-      axios
-        .get(
-          "https://jsonplaceholder.typicode.com/posts/" + this.state.selectedId
-        )
-        .then(response => {
-          const data = response.data;
-          this.setState({
-            selectedPostTitle: data.title,
-            selectedPostBody: data.body
-          });
-        });
-    }
-  }
+  resetSelected = () => {
+    this.setState({ selectedId: 0 });
+  };
 
   render() {
     const arr = this.state.posts.map(element => {
@@ -59,8 +45,8 @@ class Layout extends Component {
         <section className={classes.Posts}>{arr}</section>
         <section>
           <SelectedPost
-            title={this.state.selectedPostTitle}
-            body={this.state.selectedPostBody}
+            resetId={this.resetSelected}
+            id={this.state.selectedId}
           ></SelectedPost>
         </section>
         <section>

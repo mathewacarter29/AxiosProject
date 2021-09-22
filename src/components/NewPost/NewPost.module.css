@@ -22,6 +22,10 @@
   cursor: pointer;
 }
 
+.NewPost button:hover {
+  background-color: darkgreen;
+}
+
 .NewPost input {
   width: 40%;
   margin: auto;

@@ -4,7 +4,7 @@
   flex-wrap: wrap;
   flex-direction: row;
   align-content: space-between;
-  margin: auto;
+  margin: 5px auto;
   overflow: auto;
   height: 500px;
   background-color: lightblue;

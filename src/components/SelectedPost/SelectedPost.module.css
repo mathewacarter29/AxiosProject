@@ -1,7 +1,25 @@
 .SelectedPost {
   width: 50%;
-  height: 30%;
+  height: 20%;
   margin: 5px auto;
   border: solid;
   background-color: lightblue;
+}
+
+.SelectedPost button {
+  margin: 20px auto;
+  width: 20%;
+  background-color: red; /* Red */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.SelectedPost button:hover {
+  background-color: darkred;
 }
